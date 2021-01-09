@@ -1,10 +1,16 @@
 import jinja2
 from datetime import datetime
 from subprocess import PIPE, run
+import os
+from shutil import copyfile
 
 now = datetime.now()
 command = ['uptime', '-p']
 uptime = run(command, stdout=PIPE, stderr=PIPE, universal_newlines=True)
+
+style_name = "./dist/style.css"
+os.makedirs(os.path.dirname(style_name), exist_ok=True)
+copyfile("./style.css", "./dist/style.css")
 
 templateLoader = jinja2.FileSystemLoader(searchpath="./")
 templateEnv = jinja2.Environment(loader=templateLoader)
@@ -26,5 +32,7 @@ outputText = template.render({
 
 # print(outputText)
 
-with open("index.html", "w", encoding="utf-8") as fh:
+filename = "dist/index.html"
+os.makedirs(os.path.dirname(filename), exist_ok=True)
+with open(filename, "w", encoding="utf-8") as fh:
     fh.write(outputText)

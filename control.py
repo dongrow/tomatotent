@@ -8,9 +8,6 @@ GPIO.setup(14, GPIO.OUT)
 if sys.argv[-1] == "off":
     GPIO.output(14, GPIO.LOW)
 
-if sys.argv[-1] == "dim":
-    GPIO.output(14, 0.5)
-
 if sys.argv[-1] == "on":
     GPIO.cleanup()
 
