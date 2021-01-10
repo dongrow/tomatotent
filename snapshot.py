@@ -14,5 +14,5 @@ camera.start_preview()
 # Camera warm-up time
 sleep(2)
 
-camera.capture(snap_name)
+# camera.capture(snap_name)
 camera.capture(latest_name)
