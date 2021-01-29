@@ -1,3 +1,4 @@
 jinja2
 picamera
 RPi.GPIO
+dht11
