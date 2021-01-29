@@ -4,8 +4,8 @@ import os
 from datetime import datetime
 
 now = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
-snap_name = "dist/" + now + ".jpg" 
-latest_name = "dist/latest.jpg"
+snap_name = "docs/" + now + ".jpg" 
+latest_name = "docs/latest.jpg"
 os.makedirs(os.path.dirname(latest_name), exist_ok=True)
 
 camera = PiCamera()
